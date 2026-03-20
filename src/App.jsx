@@ -183,15 +183,15 @@ function LoginView({ onLogin }) {
         try {
           await fetch('https://hooks.zapier.com/hooks/catch/19247019/uwr0vff/', {
             method: 'POST',
-            mode: 'no-cors',
+            // mode: 'no-cors',
             body: JSON.stringify({ 
               uuid: crypto.randomUUID(),
               customerId: data.user.id,
               action: 'init',
               customerSessionId: SafeSDK.getCSID(),
               activityType: 'LOGIN',
-              brand: 'Main_Bank_Brand',
-              solution: 'ATO_PROTECTION',
+              brand: 'SD',
+              solution: 'ATO',
               iam: 'USER_AUTH_SYSTEM'
             })
           });
@@ -264,15 +264,15 @@ function TransferView({ user, onNavigate }) {
       try {
         await fetch('https://hooks.zapier.com/hooks/catch/19247019/uwr0vff/', {
           method: 'POST',
-          mode: 'no-cors',
+          // mode: 'no-cors',
           body: JSON.stringify({ 
             uuid: crypto.randomUUID(),
             customerId: user.id,
             action: 'getScore',
             customerSessionId: SafeSDK.getCSID(),
             activityType: 'PAYMENT_TRANSFER',
-            brand: 'Main_Bank_Brand',
-            solution: 'ATO_PROTECTION',
+            brand: 'SD',
+            solution: 'ATO',
             iam: 'USER_AUTH_SYSTEM',
             amount: Number(amount) 
           })
