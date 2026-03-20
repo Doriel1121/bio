@@ -77,6 +77,7 @@ export default function App() {
   const [user, setUser] = useState(null);
   const [sdkLoaded, setSdkLoaded] = useState(false);
 
+  
   // ==========================================
   // Dynamic SDK Injection Simulation
   // ==========================================
